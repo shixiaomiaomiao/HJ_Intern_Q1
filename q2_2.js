@@ -26,10 +26,11 @@ function getByClass( oParent, sClass )
 }
 function setTimer( obj )
 {
-	console.log( obj);
 	clearInterval(obj.timer);
-	obj.n = 0;
-	obj.ny = 0;
+	if ( obj.ny === undefined )
+	{
+		obj.ny = 0;
+	}
 	obj.timer = setInterval(function(){
 		obj.ny += 1;
 		obj.style.transform = "rotateY(" + obj.ny + "deg)";
@@ -38,7 +39,6 @@ function setTimer( obj )
 		obj.style.MozTransform = "rotateY(" + obj.ny + "deg)";
 		if (obj.ny == 180 || obj.ny >= 360)
 		{
-			console.log(obj.ny);
 			clearInterval( obj.timer );
 			if ( obj.ny >= 360 ) 
 			{
