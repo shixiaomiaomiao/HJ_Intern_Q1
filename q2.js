@@ -3,10 +3,10 @@ var container = getByClass(topBar,"container")[0];
 var a = container.getElementsByTagName('a')[0];
 var logoImg = container.getElementsByTagName('img')[0];
 a.setAttribute("href","javascript:;");
+var n = 0;
+var ny = 0;
+var rotYINT;
 logoImg.addEventListener("click", function(){
-	var n = 0;
-	var ny = 0;
-	var rotYINT;
 	var that = this;
 	clearInterval( rotYINT );
 	rotYINT = setInterval( function (){
